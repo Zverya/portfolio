@@ -4,257 +4,203 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sasha Zabersky — CV</title>
-<meta name="description" content="CV of Sasha Zabersky — UX/UI designer, creative lead and product person.">
+<meta name="description" content="Curriculum Vitae of Sasha Zabersky — UX / UI & Product Designer · Creative Lead.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg:#F4EFE7; --surface:#FCFAF5; --ink:#2A251F; --ink-soft:#6E655B;
-    --muted:#9C8C6F; --accent:#BC5B3A; --line:rgba(42,37,31,0.10);
-    --dot:#7f9c6c;
-    --display:'Bricolage Grotesque',sans-serif;
-    --body:'Hanken Grotesk',sans-serif;
-    --mono:'JetBrains Mono',monospace;
-  }
-  *{box-sizing:border-box}
-  html{-webkit-text-size-adjust:100%}
-  body{
-    margin:0;background:var(--bg);color:var(--ink);
-    font-family:var(--body);font-size:16px;line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-  a{color:inherit}
-  .wrap{max-width:900px;margin:0 auto;padding:0 32px}
-
-  /* top bar */
-  .topbar{position:sticky;top:0;z-index:10;background:rgba(244,239,231,0.86);
-    backdrop-filter:saturate(1.2) blur(8px);border-bottom:1px solid var(--line)}
-  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:66px;gap:20px}
-  .brand{font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:-.01em;text-decoration:none}
-  .nav{display:flex;align-items:center;gap:26px}
-  .nav a{font-size:15px;color:var(--ink-soft);text-decoration:none;font-weight:500;transition:color .15s}
-  .nav a:hover{color:var(--ink)}
-  .nav a.current{color:var(--ink)}
-  .btn{font-family:var(--body);font-weight:600;font-size:14px;color:#fff;background:var(--accent);
-    border:0;border-radius:999px;padding:10px 18px;text-decoration:none;cursor:pointer;transition:filter .15s;white-space:nowrap}
-  .btn:hover{filter:brightness(1.06)}
-  .btn.ghost{background:transparent;color:var(--ink-soft);border:1px solid var(--line)}
-  .btn.ghost:hover{color:var(--ink)}
-
-  /* header block */
-  header.hero{padding:64px 0 40px}
-  .avail{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);
-    font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:22px}
-  .avail .dot{width:9px;height:9px;border-radius:50%;background:var(--dot)}
-  h1{font-family:var(--display);font-weight:700;letter-spacing:-.02em;line-height:1.02;
-    font-size:clamp(40px,7vw,64px);margin:0 0 14px}
-  .role{font-family:var(--display);font-weight:600;font-size:clamp(17px,2.5vw,21px);color:var(--accent);margin:0 0 22px}
-  .summary{font-size:clamp(16px,2vw,18px);color:var(--ink-soft);max-width:62ch;margin:0 0 24px}
-  .contact{display:flex;flex-wrap:wrap;gap:10px 22px;font-size:15px}
-  .contact a{color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;gap:7px}
-  .contact a:hover{color:var(--accent)}
-  .contact .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-
-  /* sections */
-  section{padding:30px 0}
-  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:26px}
-  .sec-head h2{font-family:var(--display);font-weight:700;font-size:clamp(24px,4vw,32px);letter-spacing:-.01em;margin:0}
-  .sec-head .meta{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-  .rule{height:1px;background:var(--line);border:0;margin:0}
-
-  /* experience */
-  .exp{display:grid;grid-template-columns:150px 1fr;gap:24px;padding:24px 0;border-bottom:1px solid var(--line)}
-  .exp:last-child{border-bottom:0}
-  .exp .period{font-family:var(--mono);font-size:12.5px;letter-spacing:.03em;color:var(--muted);padding-top:4px}
-  .exp .etitle{font-family:var(--display);font-weight:600;font-size:19px;letter-spacing:-.01em;margin:0 0 3px}
-  .exp .company{font-weight:600;color:var(--accent);font-size:15px;margin:0 0 8px}
-  .exp .note{color:var(--ink-soft);font-size:15.5px;margin:0;max-width:64ch}
-
-  /* skills */
-  .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
-  .skillcol h3{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 14px;font-weight:500}
-  .chips{display:flex;flex-wrap:wrap;gap:8px}
-  .chip{background:var(--surface);border:1px solid var(--line);border-radius:999px;
-    padding:7px 13px;font-size:14px;color:var(--ink);white-space:nowrap}
-
-  /* footer */
-  footer{padding:56px 0 72px}
-  .cta{background:var(--surface);border:1px solid var(--line);border-radius:20px;
-    padding:38px 34px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px}
-  .cta h2{font-family:var(--display);font-weight:700;font-size:clamp(22px,3.4vw,28px);letter-spacing:-.01em;margin:0;max-width:22ch}
-  .footnote{margin-top:26px;font-size:13px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
-  .footnote a{color:var(--muted);text-decoration:none}
-  .footnote a:hover{color:var(--ink)}
-
-  @media (max-width:640px){
-    .wrap{padding:0 20px}
-    .nav{display:none}
-    .exp{grid-template-columns:1fr;gap:6px}
-    .exp .period{padding-top:0}
-    .skills{grid-template-columns:1fr}
-  }
-
-  /* print — clean single-page-ish CV */
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:#F4EFE7}
+  ::selection{background:#E7C9B8;color:#2A251F}
+  .clink:hover{color:#BC5B3A !important;text-decoration:underline;text-underline-offset:3px}
   @media print{
-    .topbar,.footnote,.printbtn{display:none!important}
-    body{background:#fff;color:#000;font-size:11.5px}
-    .wrap{max-width:none;padding:0}
-    header.hero{padding:0 0 16px}
-    h1{font-size:30px}
-    section{padding:12px 0}
-    .exp{padding:11px 0;break-inside:avoid}
-    .cta{background:none;border:0;padding:12px 0}
-    .btn{display:none}
-    a{color:#000!important}
+    .no-print{display:none !important}
+    body{background:#fff}
   }
 </style>
 </head>
 <body>
-  <div class="topbar">
-    <div class="wrap">
-      <a class="brand" href="/">Sasha Zabersky</a>
-      <nav class="nav">
-        <a href="/#work">Work</a>
-        <a href="/#experience">Experience</a>
-        <a href="/#skills">Skills</a>
-        <a class="current" href="CV.dc.html" aria-current="page">CV</a>
-        <button class="btn ghost printbtn" type="button" onclick="window.print()">Print</button>
-        <a class="btn" href="mailto:sasha@zverix.com">Get in touch</a>
-      </nav>
+<div style="background:#F4EFE7;color:#2A251F;font-family:'Hanken Grotesk',sans-serif;min-height:100vh;-webkit-font-smoothing:antialiased">
+
+  <nav class="no-print" style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:20px 7vw;background:rgba(244,239,231,0.82);backdrop-filter:blur(12px);border-bottom:1px solid rgba(42,37,31,0.07)">
+    <a href="index.html" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:18px;letter-spacing:-0.01em;color:#2A251F;text-decoration:none">Sasha Zabersky</a>
+    <div style="display:flex;align-items:center;gap:24px">
+      <a href="index.html#work" style="display:inline-flex;align-items:center;gap:7px;font-size:15px;color:#6E655B;text-decoration:none;font-weight:500">← Back to portfolio</a>
+      <a href="https://www.zverix.com/_files/ugd/b63922_ce8078f8c971417a99cecb9507dcbd7c.pdf" target="_blank" rel="noopener" style="font-size:15px;color:#FBF8F2;text-decoration:none;font-weight:500;background:#BC5B3A;padding:9px 18px;border-radius:100px">Download PDF</a>
     </div>
-  </div>
+  </nav>
 
-  <main class="wrap">
-    <header class="hero">
-      <span class="avail"><span class="dot"></span> Open to senior roles</span>
-      <h1>Sasha Zabersky</h1>
-      <p class="role">UX/UI Designer · Creative Lead · Product</p>
-      <p class="summary">I'm Sasha — a UX/UI designer, creative lead, and product person. For close to 20 years in the startup world I've optimized, researched, and built new products across SaaS, BI, AI/LLM, MedTech, and AdTech. I work end-to-end: research, systems, interaction, and the pixels.</p>
-      <div class="contact">
-        <a href="mailto:sasha@zverix.com"><span class="lbl">Email</span> sasha@zverix.com</a>
-        <a href="https://zverix.com"><span class="lbl">Web</span> zverix.com</a>
-      </div>
-    </header>
+  <main style="max-width:880px;margin:0 auto;padding:clamp(32px,5vw,64px) 7vw clamp(72px,9vw,120px)">
 
-    <hr class="rule">
+    <!-- CV PAPER -->
+    <article style="background:#FCFAF5;border:1px solid rgba(42,37,31,0.08);border-radius:24px;padding:clamp(32px,5vw,64px);box-shadow:0 30px 70px -45px rgba(42,37,31,0.4)">
 
-    <section id="experience">
-      <div class="sec-head"><h2>Experience</h2><span class="meta">2006 — Present</span></div>
-
-      <div class="exp">
-        <div class="period">2025 — Present</div>
-        <div>
-          <p class="etitle">Senior UX Designer</p>
-          <p class="company">Lumana</p>
-          <p class="note">Owned the end-to-end UX of a complex, data-rich AI video-security platform — taking 3 new products from concept to launch, building a Figma design system, and wiring design straight into engineering via Claude Code for sharper handoff.</p>
+      <!-- HEADER -->
+      <header style="padding-bottom:clamp(24px,3vw,34px);border-bottom:2px solid #2A251F">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#9C8C6F;margin-bottom:14px">Curriculum Vitae</div>
+        <h1 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:clamp(34px,4.6vw,52px);line-height:1.02;letter-spacing:-0.025em;color:#2A251F;margin-bottom:8px">Sasha Zabersky</h1>
+        <div style="font-size:clamp(16px,1.6vw,19px);color:#BC5B3A;font-weight:500;margin-bottom:20px">UX / UI &amp; Product Designer · Creative Lead</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px 22px;font-size:14.5px;color:#6E655B">
+          <a class="clink" href="mailto:zverya@gmail.com" style="display:inline-flex;align-items:center;gap:6px;color:#6E655B;text-decoration:none"><span style="width:5px;height:5px;border-radius:50%;background:#C9A98F"></span>zverya@gmail.com</a>
+          <a class="clink" href="tel:+972547531855" style="display:inline-flex;align-items:center;gap:6px;color:#6E655B;text-decoration:none"><span style="width:5px;height:5px;border-radius:50%;background:#C9A98F"></span>054-753-1855</a>
+          <a class="clink" href="https://www.linkedin.com/in/sashazabersky" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;color:#6E655B;text-decoration:none"><span style="width:5px;height:5px;border-radius:50%;background:#C9A98F"></span>linkedin/sashazabersky</a>
+          <a class="clink" href="https://www.zverix.com/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;color:#6E655B;text-decoration:none"><span style="width:5px;height:5px;border-radius:50%;background:#C9A98F"></span>zverix.com</a>
         </div>
-      </div>
+      </header>
 
-      <div class="exp">
-        <div class="period">2022 — 2024</div>
-        <div>
-          <p class="etitle">Head of Creative &amp; Senior Product Manager</p>
-          <p class="company">Alison.AI</p>
-          <p class="note">Led the redesign, rebranding and overall UX of the web app. Owned ideation, prioritisation and delegation, plus user testing and analytics.</p>
+      <!-- SUMMARY -->
+      <section style="padding:clamp(24px,3vw,34px) 0;border-bottom:1px solid rgba(42,37,31,0.1)">
+        <p style="font-size:clamp(16px,1.55vw,18px);line-height:1.62;color:#3F3A33;max-width:54em">I'm passionate about how great products make sense of things. My professional and personal goals are to carry that over and make everything easy, simple, and fun. In short, getting people excited. Let's do amazing things together.</p>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section style="padding-top:clamp(28px,3.5vw,40px)">
+        <h2 style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:#9C8C6F;margin-bottom:8px">Experience</h2>
+
+        <div style="padding:24px 0;border-top:1px solid rgba(42,37,31,0.1)">
+          <div style="display:grid;grid-template-columns:1fr auto;gap:14px;align-items:baseline">
+            <div>
+              <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:clamp(19px,2.1vw,23px);letter-spacing:-0.015em;color:#2A251F;line-height:1.2">Senior UX Designer</h3>
+              <div style="font-size:15.5px;color:#BC5B3A;font-weight:500;margin-top:3px">Lumana</div>
+            </div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#9C8C6F;white-space:nowrap;text-align:right">2025 — Present</div>
+          </div>
+          <p style="font-size:15.5px;line-height:1.58;color:#6E655B;max-width:52em;margin-top:12px">Lumana is an AI-powered video-security SaaS that turns any camera into a real-time monitoring, detection and response system. On a two-person design team I own the end-to-end UX of a complex, data-rich web app — from new product concepts through design systems and developer handoff.</p>
+          <ul style="margin:14px 0 2px;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px;max-width:54em">
+            <li style="position:relative;padding-left:20px;font-size:15px;line-height:1.55;color:#3F3A33"><span style="position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:#BC5B3A"></span>Owned the design of 3 new products from concept to launch — driving each through user research, interactive prototyping, and developer handoff.</li>
+            <li style="position:relative;padding-left:20px;font-size:15px;line-height:1.55;color:#3F3A33"><span style="position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:#BC5B3A"></span>Established a process moving UX work from Figma directly into Claude Code, connecting design to the dev codebase — improving handoff accuracy and saving significant dev and UX hours.</li>
+            <li style="position:relative;padding-left:20px;font-size:15px;line-height:1.55;color:#3F3A33"><span style="position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:#BC5B3A"></span>Designed new user flows and reworked existing ones across a data-heavy interface, improving usability at key friction points found through user and market research.</li>
+            <li style="position:relative;padding-left:20px;font-size:15px;line-height:1.55;color:#3F3A33"><span style="position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:#BC5B3A"></span>Implemented a Figma design system and built interactive prototypes with Figma Make, standardizing components across the entire product suite.</li>
+          </ul>
         </div>
-      </div>
 
-      <div class="exp">
-        <div class="period">2018 — Present</div>
-        <div>
-          <p class="etitle">UX, UI &amp; Product Consultant</p>
-          <p class="company">Zverix</p>
-          <p class="note">Independent consultant for a range of startups — planning, prototyping and designing complex systems end-to-end.</p>
+        <div style="padding:24px 0;border-top:1px solid rgba(42,37,31,0.1)">
+          <div style="display:grid;grid-template-columns:1fr auto;gap:14px;align-items:baseline">
+            <div>
+              <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:clamp(19px,2.1vw,23px);letter-spacing:-0.015em;color:#2A251F;line-height:1.2">UX, UI &amp; Product Manager</h3>
+              <div style="font-size:15.5px;color:#BC5B3A;font-weight:500;margin-top:3px">Alison.AI</div>
+            </div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#9C8C6F;white-space:nowrap;text-align:right">2023 — 2024</div>
+          </div>
+          <p style="font-size:15.5px;line-height:1.58;color:#6E655B;max-width:52em;margin-top:12px">Alison is an AI-powered video analysis SaaS platform. As the single UX/UI person and product manager, I planned the roadmap, oversaw its implementation, and constantly optimized the experience and interface of a data-heavy BI system.</p>
+          <ul style="margin:14px 0 2px;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px;max-width:54em">
+            <li style="position:relative;padding-left:20px;font-size:15px;line-height:1.55;color:#3F3A33"><span style="position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:#BC5B3A"></span>Led and initiated the rebranding and redesign of the entire system.</li>
+            <li style="position:relative;padding-left:20px;font-size:15px;line-height:1.55;color:#3F3A33"><span style="position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:#BC5B3A"></span>Planned and implemented UX and UI solutions for new features.</li>
+            <li style="position:relative;padding-left:20px;font-size:15px;line-height:1.55;color:#3F3A33"><span style="position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:#BC5B3A"></span>Optimized the interface based on user testing and analytics.</li>
+            <li style="position:relative;padding-left:20px;font-size:15px;line-height:1.55;color:#3F3A33"><span style="position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:#BC5B3A"></span>Defined and prioritized the daily and weekly tasks of the creative, dev and VA teams in Israel and Ukraine.</li>
+          </ul>
         </div>
-      </div>
 
-      <div class="exp">
-        <div class="period">2018 — 2022</div>
-        <div>
-          <p class="etitle">Carpenter &amp; Founder</p>
-          <p class="company">Babe the Builder</p>
-          <p class="note">Founded and ran my own small carpentry business doing interior and exterior woodworking.</p>
+        <div style="padding:24px 0;border-top:1px solid rgba(42,37,31,0.1)">
+          <div style="display:grid;grid-template-columns:1fr auto;gap:14px;align-items:baseline">
+            <div>
+              <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:clamp(19px,2.1vw,23px);letter-spacing:-0.015em;color:#2A251F;line-height:1.2">Carpenter (self-employed)</h3>
+              <div style="font-size:15.5px;color:#BC5B3A;font-weight:500;margin-top:3px">Babe the Builder</div>
+            </div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#9C8C6F;white-space:nowrap;text-align:right">2020 — 2023</div>
+          </div>
+          <p style="font-size:15.5px;line-height:1.58;color:#6E655B;max-width:52em;margin-top:12px">Ran my own carpentry business doing interior and exterior woodworking. Welcome to take a look:
+            <a href="https://www.instagram.com/babe_the_builder/" target="_blank" rel="noopener" style="color:#BC5B3A;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;font-weight:500">instagram.com/babe_the_builder</a>
+          </p>
         </div>
-      </div>
 
-      <div class="exp">
-        <div class="period">2017 — 2018</div>
-        <div>
-          <p class="etitle">Mobile Product Manager &amp; Creative</p>
-          <p class="company">Magisto (Vimeo)</p>
-          <p class="note">Drove ideation, prioritisation and delegation for the mobile division, with user testing and follow-up.</p>
+        <div style="padding:24px 0;border-top:1px solid rgba(42,37,31,0.1)">
+          <div style="display:grid;grid-template-columns:1fr auto;gap:14px;align-items:baseline">
+            <div>
+              <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:clamp(19px,2.1vw,23px);letter-spacing:-0.015em;color:#2A251F;line-height:1.2">Product Management &amp; UX/UI Consultant</h3>
+              <div style="font-size:15.5px;color:#BC5B3A;font-weight:500;margin-top:3px">Independent</div>
+            </div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#9C8C6F;white-space:nowrap;text-align:right">2018 — 2021</div>
+          </div>
+          <p style="font-size:15.5px;line-height:1.58;color:#6E655B;max-width:52em;margin-top:12px">Provided a broad spectrum of consultation on product ideation, definition, specification and development. Among the companies I worked with:</p>
+          <ul style="margin:14px 0 2px;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px;max-width:54em">
+            <li style="position:relative;padding-left:20px;font-size:15px;line-height:1.55;color:#3F3A33"><span style="position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:#BC5B3A"></span>2bPrecise (MedTech): Product, UX and UI for a desktop app aggregating lab-results data and adding a layer of information onto EMRs.</li>
+            <li style="position:relative;padding-left:20px;font-size:15px;line-height:1.55;color:#3F3A33"><span style="position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:#BC5B3A"></span>Nuance Hearing (MedTech): Product and UX prototyping for a hearing-device app.</li>
+            <li style="position:relative;padding-left:20px;font-size:15px;line-height:1.55;color:#3F3A33"><span style="position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:#BC5B3A"></span>Applitools (Visual QA SaaS): Product, UX and UI for a new visual QA product.</li>
+          </ul>
         </div>
-      </div>
 
-      <div class="exp">
-        <div class="period">2013 — 2017</div>
-        <div>
-          <p class="etitle">Director of Product &amp; Head of Creative</p>
-          <p class="company">MyPermissions</p>
-          <p class="note">Owned product direction and creative, plus business-partner coordination.</p>
+        <div style="padding:24px 0;border-top:1px solid rgba(42,37,31,0.1)">
+          <div style="display:grid;grid-template-columns:1fr auto;gap:14px;align-items:baseline">
+            <div>
+              <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:clamp(19px,2.1vw,23px);letter-spacing:-0.015em;color:#2A251F;line-height:1.2">Head of UI/UX &amp; Mobile Product Manager</h3>
+              <div style="font-size:15.5px;color:#BC5B3A;font-weight:500;margin-top:3px">Magisto</div>
+            </div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#9C8C6F;white-space:nowrap;text-align:right">2017 — 2018</div>
+          </div>
+          <p style="font-size:15.5px;line-height:1.58;color:#6E655B;max-width:52em;margin-top:12px">Magisto is a complete AI-powered video marketing platform. As mobile product manager I owned the ideation and execution of the company's top-grossing platform vision.</p>
+          <ul style="margin:14px 0 2px;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px;max-width:54em">
+            <li style="position:relative;padding-left:20px;font-size:15px;line-height:1.55;color:#3F3A33"><span style="position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:#BC5B3A"></span>Conducted user tests and product demos for clients, and translated them into product optimizations.</li>
+            <li style="position:relative;padding-left:20px;font-size:15px;line-height:1.55;color:#3F3A33"><span style="position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:#BC5B3A"></span>Performed countless A/B tests on pricing UX and UI to improve user engagement and monetization.</li>
+            <li style="position:relative;padding-left:20px;font-size:15px;line-height:1.55;color:#3F3A33"><span style="position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:#BC5B3A"></span>Managed the daily and weekly tasks of the creative and dev teams in Israel (iOS) and Ukraine (Android), including bi-monthly visits.</li>
+          </ul>
         </div>
-      </div>
 
-      <div class="exp">
-        <div class="period">2006 — 2013</div>
-        <div>
-          <p class="etitle">UI/UX Designer</p>
-          <p class="company">Various startups</p>
-          <p class="note">Cut my teeth across early-stage startups, designing interfaces and learning to ship.</p>
+        <div style="padding:24px 0;border-top:1px solid rgba(42,37,31,0.1)">
+          <div style="display:grid;grid-template-columns:1fr auto;gap:14px;align-items:baseline">
+            <div>
+              <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:clamp(19px,2.1vw,23px);letter-spacing:-0.015em;color:#2A251F;line-height:1.2">Director of Product &amp; Head of Creative</h3>
+              <div style="font-size:15.5px;color:#BC5B3A;font-weight:500;margin-top:3px">MyPermissions</div>
+            </div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#9C8C6F;white-space:nowrap;text-align:right">2013 — 2016</div>
+          </div>
+          <p style="font-size:15.5px;line-height:1.58;color:#6E655B;max-width:52em;margin-top:12px">MyPermissions quickly became the leader in personal-information privacy. As director of product I led and executed the founders' vision across desktop, Android and iOS throughout the product lifecycle.</p>
+          <ul style="margin:14px 0 2px;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px;max-width:54em">
+            <li style="position:relative;padding-left:20px;font-size:15px;line-height:1.55;color:#3F3A33"><span style="position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:#BC5B3A"></span>Produced detailed PRDs and managed the releases of 3 new product versions across all platforms — new features, new infrastructure and new UX/UI.</li>
+            <li style="position:relative;padding-left:20px;font-size:15px;line-height:1.55;color:#3F3A33"><span style="position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:#BC5B3A"></span>Initiated product improvements and new features based on analytics and user behavior.</li>
+            <li style="position:relative;padding-left:20px;font-size:15px;line-height:1.55;color:#3F3A33"><span style="position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:#BC5B3A"></span>Led execution of the company's vision and roadmap in collaboration with biz-dev and partners.</li>
+            <li style="position:relative;padding-left:20px;font-size:15px;line-height:1.55;color:#3F3A33"><span style="position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:#BC5B3A"></span>Managed, defined and prioritized the daily and weekly tasks of the creative and dev teams.</li>
+          </ul>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <hr class="rule">
+      <!-- ADDITIONAL -->
+      <section style="padding-top:clamp(24px,3vw,32px);border-top:1px solid rgba(42,37,31,0.1)">
+        <h2 style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:#9C8C6F;margin-bottom:16px">Additional experience</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px 28px">
+          <div style="position:relative;padding-left:20px;font-size:15px;line-height:1.5;color:#3F3A33"><span style="position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:#C9A98F"></span>UX/UI Director &amp; Product Manager — La-mark</div>
+          <div style="position:relative;padding-left:20px;font-size:15px;line-height:1.5;color:#3F3A33"><span style="position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:#C9A98F"></span>Design Lead — ooVoo</div>
+          <div style="position:relative;padding-left:20px;font-size:15px;line-height:1.5;color:#3F3A33"><span style="position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:#C9A98F"></span>UX / Product Designer — Seeking Alpha</div>
+          <div style="position:relative;padding-left:20px;font-size:15px;line-height:1.5;color:#3F3A33"><span style="position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:#C9A98F"></span>Graphic Artist — Beyond the Rack</div>
+        </div>
+      </section>
 
-    <section id="skills">
-      <div class="sec-head"><h2>What I bring</h2><span class="meta">Craft · Research · Domains</span></div>
-      <div class="skills">
-        <div class="skillcol">
-          <h3>Craft</h3>
-          <div class="chips">
-            <span class="chip">Product strategy</span>
-            <span class="chip">Interaction design</span>
-            <span class="chip">Prototyping</span>
-            <span class="chip">Information architecture</span>
-            <span class="chip">Visual &amp; brand design</span>
+      <!-- SKILLS + EDUCATION -->
+      <section style="padding-top:clamp(28px,3.5vw,40px);margin-top:clamp(28px,3.5vw,40px);border-top:1px solid rgba(42,37,31,0.1);display:grid;grid-template-columns:1.4fr 1fr;gap:40px">
+        <div>
+          <h2 style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:#9C8C6F;margin-bottom:16px">Skills &amp; tools</h2>
+          <div style="display:flex;flex-wrap:wrap;gap:9px">
+            <span style="font-size:14.5px;color:#3F3A33;background:#F1EADF;border:1px solid rgba(42,37,31,0.06);padding:7px 13px;border-radius:100px">Claude Code prototyping</span>
+            <span style="font-size:14.5px;color:#3F3A33;background:#F1EADF;border:1px solid rgba(42,37,31,0.06);padding:7px 13px;border-radius:100px">Figma Make</span>
+            <span style="font-size:14.5px;color:#3F3A33;background:#F1EADF;border:1px solid rgba(42,37,31,0.06);padding:7px 13px;border-radius:100px">Dev handoff</span>
+            <span style="font-size:14.5px;color:#3F3A33;background:#F1EADF;border:1px solid rgba(42,37,31,0.06);padding:7px 13px;border-radius:100px">Adobe Suite</span>
+            <span style="font-size:14.5px;color:#3F3A33;background:#F1EADF;border:1px solid rgba(42,37,31,0.06);padding:7px 13px;border-radius:100px">Figma</span>
+            <span style="font-size:14.5px;color:#3F3A33;background:#F1EADF;border:1px solid rgba(42,37,31,0.06);padding:7px 13px;border-radius:100px">Axure prototyping</span>
+            <span style="font-size:14.5px;color:#3F3A33;background:#F1EADF;border:1px solid rgba(42,37,31,0.06);padding:7px 13px;border-radius:100px">Google Analytics</span>
+            <span style="font-size:14.5px;color:#3F3A33;background:#F1EADF;border:1px solid rgba(42,37,31,0.06);padding:7px 13px;border-radius:100px">Hotjar</span>
+            <span style="font-size:14.5px;color:#3F3A33;background:#F1EADF;border:1px solid rgba(42,37,31,0.06);padding:7px 13px;border-radius:100px">Mixpanel</span>
+            <span style="font-size:14.5px;color:#3F3A33;background:#F1EADF;border:1px solid rgba(42,37,31,0.06);padding:7px 13px;border-radius:100px">ClickUp</span>
+            <span style="font-size:14.5px;color:#3F3A33;background:#F1EADF;border:1px solid rgba(42,37,31,0.06);padding:7px 13px;border-radius:100px">Jira</span>
+            <span style="font-size:14.5px;color:#3F3A33;background:#F1EADF;border:1px solid rgba(42,37,31,0.06);padding:7px 13px;border-radius:100px">Monday</span>
           </div>
         </div>
-        <div class="skillcol">
-          <h3>Research &amp; product</h3>
-          <div class="chips">
-            <span class="chip">User research</span>
-            <span class="chip">Usability testing</span>
-            <span class="chip">Ideation &amp; prioritisation</span>
-            <span class="chip">Analytics</span>
-            <span class="chip">Delegation &amp; leadership</span>
-          </div>
+        <div>
+          <h2 style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:#9C8C6F;margin-bottom:16px">Education</h2>
+          <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:18px;color:#2A251F;line-height:1.25">Natural Sciences &amp; Biochemistry</div>
+          <div style="font-size:15px;color:#6E655B;margin-top:5px">The Open University</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#9C8C6F;margin-top:4px">2004 — 2008</div>
         </div>
-        <div class="skillcol">
-          <h3>Domains</h3>
-          <div class="chips">
-            <span class="chip">SaaS</span>
-            <span class="chip">BI</span>
-            <span class="chip">AI / LLM</span>
-            <span class="chip">MedTech</span>
-            <span class="chip">AdTech</span>
-            <span class="chip">B2B &amp; B2C</span>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
+
+    </article>
+
+    <div class="no-print" style="display:flex;justify-content:space-between;align-items:center;margin-top:28px;flex-wrap:wrap;gap:10px">
+      <a href="index.html" style="font-size:14px;color:#9C8C6F;text-decoration:none">← Back to portfolio</a>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#9C8C6F">© 2026 Sasha Zabersky</span>
+    </div>
+
   </main>
-
-  <footer class="wrap">
-    <div class="cta">
-      <h2>Got a team that cares about the details? I'd love to hear about it.</h2>
-      <a class="btn" href="mailto:sasha@zverix.com">Get in touch</a>
-    </div>
-    <div class="footnote">
-      <span>Sasha Zabersky — CV</span>
-      <a href="/">← Back to portfolio</a>
-    </div>
-  </footer>
+</div>
 </body>
 </html>
