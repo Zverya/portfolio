@@ -2,10 +2,23 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Bundled Page</title>
+  <title>Sasha Zabersky — Product &amp; UX Designer</title>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <script>
+    // The bundler runtime clears document.title after it renders; keep our title applied.
+    (function () {
+      var T = "Sasha Zabersky — Product & UX Designer";
+      function apply() { if (document.title !== T) document.title = T; }
+      apply();
+      try {
+        new MutationObserver(apply).observe(document.documentElement, { subtree: true, childList: true, characterData: true });
+      } catch (e) {}
+      document.addEventListener("DOMContentLoaded", apply);
+      window.addEventListener("load", apply);
+    })();
+  </script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { background: #faf9f5; display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
