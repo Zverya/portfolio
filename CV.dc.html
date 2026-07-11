@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sasha Zabersky — CV</title>
+<meta name="description" content="CV of Sasha Zabersky — UX/UI designer, creative lead and product person.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F4EFE7; --surface:#FCFAF5; --ink:#2A251F; --ink-soft:#6E655B;
+    --muted:#9C8C6F; --accent:#BC5B3A; --line:rgba(42,37,31,0.10);
+    --dot:#7f9c6c;
+    --display:'Bricolage Grotesque',sans-serif;
+    --body:'Hanken Grotesk',sans-serif;
+    --mono:'JetBrains Mono',monospace;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:var(--body);font-size:16px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+  .wrap{max-width:900px;margin:0 auto;padding:0 32px}
+
+  /* top bar */
+  .topbar{position:sticky;top:0;z-index:10;background:rgba(244,239,231,0.86);
+    backdrop-filter:saturate(1.2) blur(8px);border-bottom:1px solid var(--line)}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:66px;gap:20px}
+  .brand{font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:-.01em;text-decoration:none}
+  .nav{display:flex;align-items:center;gap:26px}
+  .nav a{font-size:15px;color:var(--ink-soft);text-decoration:none;font-weight:500;transition:color .15s}
+  .nav a:hover{color:var(--ink)}
+  .nav a.current{color:var(--ink)}
+  .btn{font-family:var(--body);font-weight:600;font-size:14px;color:#fff;background:var(--accent);
+    border:0;border-radius:999px;padding:10px 18px;text-decoration:none;cursor:pointer;transition:filter .15s;white-space:nowrap}
+  .btn:hover{filter:brightness(1.06)}
+  .btn.ghost{background:transparent;color:var(--ink-soft);border:1px solid var(--line)}
+  .btn.ghost:hover{color:var(--ink)}
+
+  /* header block */
+  header.hero{padding:64px 0 40px}
+  .avail{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);
+    font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:22px}
+  .avail .dot{width:9px;height:9px;border-radius:50%;background:var(--dot)}
+  h1{font-family:var(--display);font-weight:700;letter-spacing:-.02em;line-height:1.02;
+    font-size:clamp(40px,7vw,64px);margin:0 0 14px}
+  .role{font-family:var(--display);font-weight:600;font-size:clamp(17px,2.5vw,21px);color:var(--accent);margin:0 0 22px}
+  .summary{font-size:clamp(16px,2vw,18px);color:var(--ink-soft);max-width:62ch;margin:0 0 24px}
+  .contact{display:flex;flex-wrap:wrap;gap:10px 22px;font-size:15px}
+  .contact a{color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;gap:7px}
+  .contact a:hover{color:var(--accent)}
+  .contact .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+  /* sections */
+  section{padding:30px 0}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:26px}
+  .sec-head h2{font-family:var(--display);font-weight:700;font-size:clamp(24px,4vw,32px);letter-spacing:-.01em;margin:0}
+  .sec-head .meta{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .rule{height:1px;background:var(--line);border:0;margin:0}
+
+  /* experience */
+  .exp{display:grid;grid-template-columns:150px 1fr;gap:24px;padding:24px 0;border-bottom:1px solid var(--line)}
+  .exp:last-child{border-bottom:0}
+  .exp .period{font-family:var(--mono);font-size:12.5px;letter-spacing:.03em;color:var(--muted);padding-top:4px}
+  .exp .etitle{font-family:var(--display);font-weight:600;font-size:19px;letter-spacing:-.01em;margin:0 0 3px}
+  .exp .company{font-weight:600;color:var(--accent);font-size:15px;margin:0 0 8px}
+  .exp .note{color:var(--ink-soft);font-size:15.5px;margin:0;max-width:64ch}
+
+  /* skills */
+  .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .skillcol h3{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 14px;font-weight:500}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{background:var(--surface);border:1px solid var(--line);border-radius:999px;
+    padding:7px 13px;font-size:14px;color:var(--ink);white-space:nowrap}
+
+  /* footer */
+  footer{padding:56px 0 72px}
+  .cta{background:var(--surface);border:1px solid var(--line);border-radius:20px;
+    padding:38px 34px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px}
+  .cta h2{font-family:var(--display);font-weight:700;font-size:clamp(22px,3.4vw,28px);letter-spacing:-.01em;margin:0;max-width:22ch}
+  .footnote{margin-top:26px;font-size:13px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  .footnote a{color:var(--muted);text-decoration:none}
+  .footnote a:hover{color:var(--ink)}
+
+  @media (max-width:640px){
+    .wrap{padding:0 20px}
+    .nav{display:none}
+    .exp{grid-template-columns:1fr;gap:6px}
+    .exp .period{padding-top:0}
+    .skills{grid-template-columns:1fr}
+  }
+
+  /* print — clean single-page-ish CV */
+  @media print{
+    .topbar,.footnote,.printbtn{display:none!important}
+    body{background:#fff;color:#000;font-size:11.5px}
+    .wrap{max-width:none;padding:0}
+    header.hero{padding:0 0 16px}
+    h1{font-size:30px}
+    section{padding:12px 0}
+    .exp{padding:11px 0;break-inside:avoid}
+    .cta{background:none;border:0;padding:12px 0}
+    .btn{display:none}
+    a{color:#000!important}
+  }
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap">
+      <a class="brand" href="/">Sasha Zabersky</a>
+      <nav class="nav">
+        <a href="/#work">Work</a>
+        <a href="/#experience">Experience</a>
+        <a href="/#skills">Skills</a>
+        <a class="current" href="CV.dc.html" aria-current="page">CV</a>
+        <button class="btn ghost printbtn" type="button" onclick="window.print()">Print</button>
+        <a class="btn" href="mailto:sasha@zverix.com">Get in touch</a>
+      </nav>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <header class="hero">
+      <span class="avail"><span class="dot"></span> Open to senior roles</span>
+      <h1>Sasha Zabersky</h1>
+      <p class="role">UX/UI Designer · Creative Lead · Product</p>
+      <p class="summary">I'm Sasha — a UX/UI designer, creative lead, and product person. For close to 20 years in the startup world I've optimized, researched, and built new products across SaaS, BI, AI/LLM, MedTech, and AdTech. I work end-to-end: research, systems, interaction, and the pixels.</p>
+      <div class="contact">
+        <a href="mailto:sasha@zverix.com"><span class="lbl">Email</span> sasha@zverix.com</a>
+        <a href="https://zverix.com"><span class="lbl">Web</span> zverix.com</a>
+      </div>
+    </header>
+
+    <hr class="rule">
+
+    <section id="experience">
+      <div class="sec-head"><h2>Experience</h2><span class="meta">2006 — Present</span></div>
+
+      <div class="exp">
+        <div class="period">2025 — Present</div>
+        <div>
+          <p class="etitle">Senior UX Designer</p>
+          <p class="company">Lumana</p>
+          <p class="note">Owned the end-to-end UX of a complex, data-rich AI video-security platform — taking 3 new products from concept to launch, building a Figma design system, and wiring design straight into engineering via Claude Code for sharper handoff.</p>
+        </div>
+      </div>
+
+      <div class="exp">
+        <div class="period">2022 — 2024</div>
+        <div>
+          <p class="etitle">Head of Creative &amp; Senior Product Manager</p>
+          <p class="company">Alison.AI</p>
+          <p class="note">Led the redesign, rebranding and overall UX of the web app. Owned ideation, prioritisation and delegation, plus user testing and analytics.</p>
+        </div>
+      </div>
+
+      <div class="exp">
+        <div class="period">2018 — Present</div>
+        <div>
+          <p class="etitle">UX, UI &amp; Product Consultant</p>
+          <p class="company">Zverix</p>
+          <p class="note">Independent consultant for a range of startups — planning, prototyping and designing complex systems end-to-end.</p>
+        </div>
+      </div>
+
+      <div class="exp">
+        <div class="period">2018 — 2022</div>
+        <div>
+          <p class="etitle">Carpenter &amp; Founder</p>
+          <p class="company">Babe the Builder</p>
+          <p class="note">Founded and ran my own small carpentry business doing interior and exterior woodworking.</p>
+        </div>
+      </div>
+
+      <div class="exp">
+        <div class="period">2017 — 2018</div>
+        <div>
+          <p class="etitle">Mobile Product Manager &amp; Creative</p>
+          <p class="company">Magisto (Vimeo)</p>
+          <p class="note">Drove ideation, prioritisation and delegation for the mobile division, with user testing and follow-up.</p>
+        </div>
+      </div>
+
+      <div class="exp">
+        <div class="period">2013 — 2017</div>
+        <div>
+          <p class="etitle">Director of Product &amp; Head of Creative</p>
+          <p class="company">MyPermissions</p>
+          <p class="note">Owned product direction and creative, plus business-partner coordination.</p>
+        </div>
+      </div>
+
+      <div class="exp">
+        <div class="period">2006 — 2013</div>
+        <div>
+          <p class="etitle">UI/UX Designer</p>
+          <p class="company">Various startups</p>
+          <p class="note">Cut my teeth across early-stage startups, designing interfaces and learning to ship.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <section id="skills">
+      <div class="sec-head"><h2>What I bring</h2><span class="meta">Craft · Research · Domains</span></div>
+      <div class="skills">
+        <div class="skillcol">
+          <h3>Craft</h3>
+          <div class="chips">
+            <span class="chip">Product strategy</span>
+            <span class="chip">Interaction design</span>
+            <span class="chip">Prototyping</span>
+            <span class="chip">Information architecture</span>
+            <span class="chip">Visual &amp; brand design</span>
+          </div>
+        </div>
+        <div class="skillcol">
+          <h3>Research &amp; product</h3>
+          <div class="chips">
+            <span class="chip">User research</span>
+            <span class="chip">Usability testing</span>
+            <span class="chip">Ideation &amp; prioritisation</span>
+            <span class="chip">Analytics</span>
+            <span class="chip">Delegation &amp; leadership</span>
+          </div>
+        </div>
+        <div class="skillcol">
+          <h3>Domains</h3>
+          <div class="chips">
+            <span class="chip">SaaS</span>
+            <span class="chip">BI</span>
+            <span class="chip">AI / LLM</span>
+            <span class="chip">MedTech</span>
+            <span class="chip">AdTech</span>
+            <span class="chip">B2B &amp; B2C</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <div class="cta">
+      <h2>Got a team that cares about the details? I'd love to hear about it.</h2>
+      <a class="btn" href="mailto:sasha@zverix.com">Get in touch</a>
+    </div>
+    <div class="footnote">
+      <span>Sasha Zabersky — CV</span>
+      <a href="/">← Back to portfolio</a>
+    </div>
+  </footer>
+</body>
+</html>
