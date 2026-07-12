@@ -18,8 +18,15 @@
   ::selection{background:#E7C9B8;color:#2A251F}
   .clink:hover{color:#BC5B3A !important;text-decoration:underline;text-underline-offset:3px}
   @media print{
+    @page{size:A4;margin:0}
     .no-print{display:none !important}
-    body{background:#fff}
+    *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
+    html,body{background:#FCFAF5 !important}
+    main{max-width:none !important;margin:0 !important;padding:0 !important}
+    article{background:#FCFAF5 !important;border:none !important;border-radius:0 !important;box-shadow:none !important;padding:13mm 15mm !important}
+    /* let roles flow to fill pages, but never split a single bullet across pages */
+    li{break-inside:avoid;page-break-inside:avoid}
+    h3{break-after:avoid}
   }
 </style>
 </head>
