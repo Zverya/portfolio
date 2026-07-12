@@ -18,19 +18,20 @@
   ::selection{background:#E7C9B8;color:#2A251F}
   .clink:hover{color:#BC5B3A !important;text-decoration:underline;text-underline-offset:3px}
   @media print{
-    /* Full-bleed cream: with no page margin the cream fills the entire sheet,
-       so there are no white bands. Breathing room comes from the article's own
-       padding (sides + first/last page) plus the cream gaps left when a whole
-       role wraps to the next page. */
-    @page{size:A4;margin:0}
+    /* Real page margins for top/bottom + side breathing room on every page.
+       A fixed cream layer repeats on each printed page (covering the margins too)
+       so the sheet stays fully cream — no white bands. Content flows to fill each
+       page (no big gaps), and orphan/widow rules stop paragraphs from splitting ugly. */
+    @page{size:A4;margin:19mm 15mm}
     .no-print{display:none !important}
     *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
     html,body{background:#FCFAF5 !important}
+    body::before{content:"";position:fixed;inset:0;background:#FCFAF5;z-index:-1}
     main{max-width:none !important;margin:0 !important;padding:0 !important}
-    article{background:#FCFAF5 !important;border:none !important;border-radius:0 !important;box-shadow:none !important;padding:15mm 16mm !important}
-    /* keep each role block whole so a paragraph never splits mid-sentence across a page break */
-    section > div{break-inside:avoid;page-break-inside:avoid}
-    h2{break-after:avoid}
+    article{background:transparent !important;border:none !important;border-radius:0 !important;box-shadow:none !important;padding:0 !important}
+    li{break-inside:avoid;page-break-inside:avoid}
+    h3{break-after:avoid}
+    p{orphans:3;widows:3;break-before:avoid}
   }
 </style>
 </head>
