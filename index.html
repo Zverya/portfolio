@@ -6,30 +6,8 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <!-- Cloudflare Web Analytics (SPA mode so in-app interactions register as virtual page views) -->
-  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "008a391bab8d4b08970a69087ab81020", "spa": true}'></script>
-  <!-- Custom events: fire a virtual page view when a project drilldown opens or the user clicks contact -->
-  <script>
-  (function(){
-    var PROJECTS=[["Lumana","lumana"],["Alison","alison-ai"],["2BPrecise","2bprecise"],["Howze","howze"],["Local projects","local-projects"]];
-    var lastPath="",lastT=0;
-    function view(path){
-      var now=Date.now(); if(path===lastPath&&now-lastT<1500)return; lastPath=path; lastT=now;
-      try{ var real=location.pathname+location.search; if(location.pathname===path)return;
-           history.pushState(null,"",path); history.replaceState(null,"",real); }catch(e){}
-    }
-    document.addEventListener("click",function(e){
-      var el=e.target.closest&&e.target.closest("a,button"); if(!el)return;
-      var href=(el.getAttribute&&el.getAttribute("href"))||"";
-      if(href.indexOf("mailto:")===0){ view("/event/contact-email"); return; }
-      // project cards: a control that contains a heading and a known project name
-      if(el.querySelector&&el.querySelector("h1,h2,h3")){
-        var t=(el.textContent||"").replace(/\s+/g," ");
-        for(var i=0;i<PROJECTS.length;i++){ if(t.indexOf(PROJECTS[i][0])>-1){ view("/work/"+PROJECTS[i][1]); return; } }
-      }
-    },true);
-  })();
-  </script>
+  <!-- Cloudflare Web Analytics -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "008a391bab8d4b08970a69087ab81020"}'></script>
   <script>
     // The bundler runtime clears document.title after it renders; keep our title applied.
     (function () {
