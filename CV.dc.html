@@ -8,8 +8,18 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<!-- Cloudflare Web Analytics -->
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "008a391bab8d4b08970a69087ab81020"}'></script>
+<!-- Cloudflare Web Analytics (SPA mode for virtual-page-view events) -->
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "008a391bab8d4b08970a69087ab81020", "spa": true}'></script>
+<script>
+(function(){
+  function view(path){try{var real=location.pathname+location.search;history.pushState(null,"",path);history.replaceState(null,"",real);}catch(e){}}
+  document.addEventListener("click",function(e){
+    var a=e.target.closest&&e.target.closest("a"); if(!a)return; var href=a.getAttribute("href")||"";
+    if(/\.pdf(\?|$)/i.test(href)) view("/event/download-cv-pdf");
+    else if(href.indexOf("mailto:")===0) view("/event/contact-email");
+  },true);
+})();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
